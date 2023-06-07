@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PermissionsInfo",
+  "type": "object",
+  "required": [
+    "permissions",
+    "spender"
+  ],
+  "properties": {
+    "permissions": {
+      "$ref": "#/definitions/Permissions"
+    },
+    "spender": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "Permissions": {
+      "type": "object",
+      "required": [
+        "delegate",
+        "redelegate",
+        "undelegate",
+        "withdraw"
+      ],
+      "properties": {
+        "delegate": {
+          "type": "boolean"
+        },
+        "redelegate": {
+          "type": "boolean"
+        },
+        "undelegate": {
+          "type": "boolean"
+        },
+        "withdraw": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
